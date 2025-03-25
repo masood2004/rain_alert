@@ -37,10 +37,11 @@ for n in range(0, 4):
         )
         print(message.status)
         break
-    else:
-        message = client.messages.create(
-            body="No need to be careful about weather.",
-            from_='whatsapp:+14155238886',
-            to='whatsapp:+923103288291'
-        )
-        print(message.status)
+
+if (data["list"][0]["weather"][0]["id"]) > 700 and (data["list"][1]["weather"][0]["id"]) > 700 and (data["list"][2]["weather"][0]["id"]) > 700 and (data["list"][3]["weather"][0]["id"]) > 700:
+    message = client.messages.create(
+        body="No need to be careful about weather.",
+        from_='whatsapp:+14155238886',
+        to='whatsapp:+923103288291'
+    )
+    print(message.status)
