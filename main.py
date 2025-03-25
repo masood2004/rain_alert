@@ -37,3 +37,10 @@ for n in range(0, 4):
         )
         print(message.status)
         break
+    else:
+        message = client.messages.create(
+            body="No need to be careful about weather.",
+            from_='whatsapp:+14155238886',
+            to='whatsapp:+923103288291'
+        )
+        print(message.status)
