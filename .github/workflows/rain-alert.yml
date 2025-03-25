@@ -8,6 +8,7 @@ on:
 jobs:
   run-rain-alert:
     runs-on: ubuntu-latest
+    environment: Weather
 
     steps:
       - name: Checkout repository
