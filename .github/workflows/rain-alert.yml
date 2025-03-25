@@ -24,4 +24,6 @@ jobs:
           pip install -r requirements.txt  # If you have a requirements.txt for dependencies
 
       - name: Run Rain Alert Script
+        env:
+          ACCOUNT_SID: ${{secrets.GITHUB_TOKEN}}
         run: python main.py # Replace with the name of the main script in your repo
