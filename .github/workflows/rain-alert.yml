@@ -24,14 +24,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Debug environment variables
-        run: |
-          echo "ACCOUNT_SID is set: ${{ secrets.ACCOUNT_SID }}"
-          echo "MY_LAT is set: ${{ secrets.MY_LAT }}"
-          echo "MY_LONG is set: ${{ secrets.MY_LONG }}"
-          echo "OWM_APP_ID is set: ${{ secrets.OWM_APP_ID }}"
-
       - name: Run Rain Alert Script
         env:
-          Weather: ${{ secrets.GITHUB_TOKEN }}
+          ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
+          MY_LAT: ${{ secrets.MY_LAT }}
+          MY_LONG: ${{ secrets.MY_LONG }}
+          OWM_APP_ID: ${{ secrets.OWM_APP_ID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
         run: python main.py # Replace with the name of the main script in your repo
