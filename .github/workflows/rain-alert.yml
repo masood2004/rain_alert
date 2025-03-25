@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3" # Replace with the version your script requires
+          python-version: "3.9" # Specify the version of Python you're using
 
       - name: Install dependencies
         run: |
@@ -25,9 +25,9 @@ jobs:
 
       - name: Run Rain Alert Script
         env:
-          ACCOUNT_SID: ${{secrets.ACCOUNT_SID}}
-          MY_LAT: ${{secrets.MY_LAT}}
-          MY_LONG: ${{secrets.MY_LONG}}
-          OWM_APP_ID: ${{secrets.OWM_APP_ID}}
-          TWILIO_AUTH_TOKEN: ${{secrets.TWILIO_AUTH_TOKEN}}
+          ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
+          MY_LAT: ${{ secrets.MY_LAT }}
+          MY_LONG: ${{ secrets.MY_LONG }}
+          OWM_APP_ID: ${{ secrets.OWM_APP_ID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
         run: python main.py # Replace with the name of the main script in your repo
