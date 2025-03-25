@@ -21,7 +21,7 @@ A Python script that checks the weather forecast and sends automated WhatsApp al
 
 2. Install required packages:
    ```bash
-   pip install requests python-dotenv twilio
+   pip install -r requirements.txt
    ```
 
 3. Create `.env` file with your credentials:
