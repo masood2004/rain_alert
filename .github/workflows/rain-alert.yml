@@ -23,6 +23,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Debug environment variables
+        run: |
+          echo "ACCOUNT_SID is set: ${{ secrets.ACCOUNT_SID }}"
+          echo "MY_LAT is set: ${{ secrets.MY_LAT }}"
+          echo "MY_LONG is set: ${{ secrets.MY_LONG }}"
+          echo "OWM_APP_ID is set: ${{ secrets.OWM_APP_ID }}"
+
       - name: Run Rain Alert Script
         env:
           ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
